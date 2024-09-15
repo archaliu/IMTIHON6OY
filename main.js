@@ -4,7 +4,8 @@ const elLogout = document.querySelector("#logOut");
 const h1 = document.querySelector("h1");
 const login = document.querySelector("#login");
 
-elBtn.addEventListener("click", () => {
+elBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   fetch("https://fakestoreapi.com/auth/login", {
     method: "POST",
     headers: {
@@ -18,25 +19,26 @@ elBtn.addEventListener("click", () => {
     .then((res) => {
       if (res.status !== 200) {
         alert("Username or Password incorrect");
+        form.username.value = "";
+        form.password.value = "";
       } else {
+        window.location.replace("./login/index.html");
       }
-      return res.json();
+      console.log(res.json());
     })
     .then((json) => {
       localStorage.setItem("token", json.token);
       if (json && localStorage.getItem("token")) {
       }
     });
-  elUsername.value = "";
-  elpassword.value = "";
 });
 if (localStorage.getItem("token")) {
   elLogout.classList.remove("d-none");
 }
-// window.location.replace("./login/index.html");
 elLogout.addEventListener("click", () => {
   localStorage.removeItem("token");
   elLogout.classList.add("d-none");
   h1.textContent = "Registratsiya";
-  elBtn.textContent = "Saqlash";
+  form.username.value = "";
+  form.password.value = "";
 });
