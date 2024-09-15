@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>KARTA MALUMOT</title>
+  </head>
+  <body>
+    <div class="con">
+      <div class="flex-box">
+        <div class="img-carta">
+          <div class="kartaraqami">
+            <div class="h1">####</div>
+            <div class="h2">####</div>
+            <div class="h3">####</div>
+            <div class="h4">####</div>
+          </div>
+          <div class="kartaoyraqami">##/##</div>
+
+          <div class="ism">NAME LASTNAME</div>
+        </div>
+        <div class="carta">
+          <form>
+            <input
+              type="number"
+              class="pastga"
+              placeholder="KARTA RAQAMINGIZ"
+              name="RAQAM"
+              maxlength="16"
+            />
+            <input
+              type="number"
+              maxlength="4"
+              minlength="3"
+              name="MUDDAT"
+              placeholder="MUDAT QILISH SANASI"
+            />
+            <input
+              type="text"
+              placeholder="ISM FAMILYASI"
+              name="ismi"
+              class="name"
+            />
+            <input
+              type="reset"
+              value=" OCHIRISH"
+              class="dele"
+              name="tozalash"
+            />
+            <button class="btnSave">SAQLASH</button>
+          </form>
+        </div>
+      </div>
+      <div class="cartalar"></div>
+    </div>
+    <script src="./main/main.js"></script>
+  </body>
+</html>
