@@ -8,7 +8,9 @@ const mouth = document.querySelector(".kartaoyraqami");
 const ism = document.querySelector(".ism");
 const btn = document.querySelector(".btnSave");
 const cartalar = document.querySelector(".cartalar");
-
+if (!localStorage.getItem("token")) {
+  window.location.replace("../index.html");
+}
 form.tozalash.addEventListener("click", () => {
   h1.textContent = "####";
   h2.textContent = "####";

@@ -21,14 +21,13 @@ elBtn.addEventListener("click", (e) => {
         alert("Username or Password incorrect");
         form.username.value = "";
         form.password.value = "";
-      } else {
-        window.location.replace("./login/index.html");
       }
-      console.log(res.json());
+      return res.json();
     })
     .then((json) => {
       localStorage.setItem("token", json.token);
-      if (json && localStorage.getItem("token")) {
+      if (localStorage.getItem("token")) {
+        window.location.replace("./login/index.html");
       }
     });
 });
